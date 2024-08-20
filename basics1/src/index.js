@@ -6,14 +6,31 @@ import Test from './Test';
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <App />
-    <Test />
-  </React.StrictMode>
-);
+const eleA = ( <a href="https://google.com" target="_blank">Click me to visit google</a> );
+const eleB = React.createElement (
+  'a',
+  {
+    href: 'https://google.com',
+    target: '_blank'
+  },
+  'Click me to visit google'
+)
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+root.render(
+
+    
+    <div>
+      <App />
+      <Test />
+      {eleA}
+      <br></br>
+      {eleB}
+    </div>
+);
+/*we can also use App() since this is a function 
+  if we were to only send one of those above then app and test syntax remains same but remove curly braces on eleA/B
+
+*/
+
+
 reportWebVitals();

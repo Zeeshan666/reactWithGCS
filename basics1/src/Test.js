@@ -2,8 +2,9 @@ import logo from './logo.svg';
 import './App.css';
 
 function Test() {
+  const username = "Abc";
   return (
-    <h1>Test</h1>
+    <h1>Test {username} </h1>
   );
 }
 

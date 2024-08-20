@@ -20,3 +20,13 @@ react initially didn't have state management but used additional JS libraries li
 
     React       => additional libraries -> WEB : react-router-dom
 (Core Library)
+
+react -> each component file returns html instead of classic functions
+      -> script added using react-scripts
+      -> react component starts with Capital letter (best prac)
+      
+
+      if u dont pass functions and pass object then it should have following syntax and order : tag , {props} , text
+                                                                                                ya phir pora tag banao and send it
+                                                                                            e.g const a =(<a href="">)
+      to inject values use {} -> evaluated js hogi idhar yani answer direct
