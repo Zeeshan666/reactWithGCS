@@ -3,10 +3,20 @@
 React is not a framework but a Javascript-based UI development library.
 framework => extra strictness, library => little relaxed wrt to rules
 
-
 why needed? easier to manage and build UI and ensures consistency
 
 # Important
 state => another name for variables (state managed by JS while UI managed by DOM)
 react makes single page application --> no router { we manipulate with the help of react-router-dom}
 react initially didn't have state management but used additional JS libraries like Redux.
+
+
+# Topics under react
+1. State, UI manipulation, jsx
+2. components and reusability of components
+3. hooks
+
+---------------------------------------------------------
+
+    React       => additional libraries -> WEB : react-router-dom
+(Core Library)
