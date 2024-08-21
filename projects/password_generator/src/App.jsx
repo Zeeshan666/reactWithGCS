@@ -1,5 +1,8 @@
-import { useCallback, useState, useEffect, useRef } from "react";
-import "./App.css";
+import { useCallback, useState, useEffect, useRef } from 'react';
+import Checkbox from './Components/Checkbox';
+import RangeInput from './Components/RangeInput';
+import TextInput from './Components/TextInput';
+import './App.css';
 
 function App() {
   const [length, setLength] = useState(8);
@@ -30,9 +33,9 @@ function App() {
 
   const copyPassword = useCallback(() => {
     if (passwordRef.current) {
-      passwordRef.current.select();
-      passwordRef.current.setSelectionRange(0, 99999); // For mobile devices
-      window.navigator.clipboard.writeText(password);
+      passwordRef.current?.select(); // this shows highlighter on selected text
+      passwordRef.current?.setSelectionRange(0, 32);  // selection range
+      window.navigator.clipboard.writeText(password); // this is for copying
       console.log("Copied:", password);
     }
   }, [password]);
@@ -41,64 +44,45 @@ function App() {
     <>
       <div className="container">
         <h1 className="header">Password Generator</h1>
-        <div className="input-group">
-          <input
-            type="text"
-            id="passwordInput"
-            value={password}
-            placeholder="Password"
-            readOnly
-            ref={passwordRef}
-          />
-          <button onClick={copyPassword}>Copy</button>
-        </div>
+        
+        <TextInput
+          id="passwordInput"
+          value={password}
+          placeholder="Password"
+          readOnly
+          ref={passwordRef}
+        />
+        &nbsp; &nbsp;
+        <button onClick={copyPassword}>Copy</button>
 
-        <div className="controls">
-          <div className="control">
-            <input
-              type="range"
-              min={8}
-              max={32}
-              value={length}
-              id="lengthRange"
-              style={{ cursor: 'pointer' }}
-              onChange={(e) => setLength(e.target.value)}
-            />
-            <label htmlFor="lengthRange">
-              Length: <span id="lengthLabel"> {length}</span>
-            </label>
-          </div>
+        <RangeInput
+          id="lengthRange"
+          min={8}
+          max={32}
+          value={length}
+          onChange={(e) => setLength(e.target.value)}
+        />
 
-          <div className="control">
-            <input
-              type="checkbox"
-              checked={includeNum}
-              id="numberInput"
-              onChange={() => setIncludeNum(prev => !prev)}
-            />
-            <label htmlFor="numberInput">Numbers</label>
-          </div>
+        <Checkbox
+          id="numberInput"
+          label="Numbers"
+          checked={includeNum}
+          onChange={() => setIncludeNum(prev => !prev)}
+        />
 
-          <div className="control">
-            <input
-              type="checkbox"
-              checked={includeCaps}
-              id="capitalInput"
-              onChange={() => setIncludeCaps(prev => !prev)}
-            />
-            <label htmlFor="capitalInput">Capital Letters</label>
-          </div>
+        <Checkbox
+          id="capitalInput"
+          label="Capital Letters"
+          checked={includeCaps}
+          onChange={() => setIncludeCaps(prev => !prev)}
+        />
 
-          <div className="control">
-            <input
-              type="checkbox"
-              checked={includeSpecialCharacter}
-              id="specialCharsInput"
-              onChange={() => setIncludeSpecialCharacter(prev => !prev)}
-            />
-            <label htmlFor="specialCharsInput">Special Chars</label>
-          </div>
-        </div>
+        <Checkbox
+          id="specialCharsInput"
+          label="Special Chars"
+          checked={includeSpecialCharacter}
+          onChange={() => setIncludeSpecialCharacter(prev => !prev)}
+        />
       </div>
     </>
   );
