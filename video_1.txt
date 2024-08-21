@@ -30,3 +30,50 @@ react -> each component file returns html instead of classic functions
                                                                                                 ya phir pora tag banao and send it
                                                                                             e.g const a =(<a href="">)
       to inject values use {} -> evaluated js hogi idhar yani answer direct
+
+
+---------------------------------------------------------------------------------
+HOOKS => feature of react that allows to access the variables and manipulate them 
+There are 3 rules for hooks:
+    Hooks can only be called inside React function components.
+    Hooks can only be called at the top level of a component.
+    Hooks cannot be conditional
+
+useState => allows us to track state in a function component.
+let [variable, editVariableFunction] = useState(initial value)
+    {curr state} {fnc to update state}
+
+useEffect => allows us to perform side effects in your components i.e operations that occur due to rendering of that component
+useEffect(() => {
+    // Side effect code here // actual stuff you do as a result
+    
+    return () => {
+        // Cleanup code here (optional) // memory leak cleanups
+    };
+}, [dependencies]); // dependencies tell how many times it should be executed
+                      if nothing is passed => infinite time execution
+                      if [] => only 1 time when initial render is managed
+                      if [prop] => when state of prop is changed
+
+
+useContext => a way to handle data sharing b/w nested components without data sharing in params with the help of useContext
+const UserContext = createContext() -> used to create a Context object, which holds the data you want to share across your component tree.
+                                        you can assign a default value to it by passing it as a argument.
+                                        returns a consumer & Provider-> A component used to provide the context value to its descendants.
+                                                    |- now replaced by useContext
+
+Provider is a component that supplies the context value to its descendants. 
+All components that are children of this Provider can access the context value.
+
+<UserContext.Provider value={contextValue}> 
+      <h1>{`Hello ${user}!`}</h1>
+      <Component2 user={user} />
+    </UserContext.Provider>
+    ::::
+
+function Component5() {
+  const user = useContext(UserContext);
+}
+useContext is a hook that allows functional components to access the context value directly without needing a Consumer component.
+The current context value, which is the value of the closest Provider up the tree. If there is no matching Provider,
+ it returns the defaultValue provided when creating the context.

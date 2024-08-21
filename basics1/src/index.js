@@ -22,18 +22,19 @@ root.render(
     
     <div>
       <App />
-      <Test />
+      
+
+    </div>
+);
+/*we can also use App() since this is a function 
+  if we were to only send one of those above then app and test syntax remains same but remove curly braces on eleA/B
+  <Test />
       {eleA}
       <br></br>
       {eleB}
 
       <br /> <br />
       <Counter />
-
-    </div>
-);
-/*we can also use App() since this is a function 
-  if we were to only send one of those above then app and test syntax remains same but remove curly braces on eleA/B
 
 */
 
