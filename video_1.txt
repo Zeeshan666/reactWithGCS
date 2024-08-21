@@ -81,3 +81,9 @@ The current context value, which is the value of the closest Provider up the tre
 -------------------------------------------------------------------------------------------------------------
 
 Props => reusing existing component properties and adding new properties
+
+
+REACT ma direct dom access nahi kerna hota ha balkay handler ko use kerka kaam kerna hota ha
+directly accesing the dom elements => may introduce inconsistency in the react dom and the actual dom
+so avoid  <button id="btn"onClick={() => setBG(document.getElementById('btn').innerText)}>WHITE</button> &nbsp;
+and use <button id="btn"onClick={() => setBG('white')}>WHITE</button> &nbsp;

@@ -1,0 +1,65 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f0f0f0;
+  margin: 0;
+}
+.container {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 16px;
+  background-color: #333;
+  color: #FFA500;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+.header {
+  color: #FFF;
+  text-align: center;
+  margin-bottom: 16px;
+}
+.input-group {
+  display: flex;
+  align-items: center;
+  margin-bottom: 16px;
+  background-color: #444;
+  border-radius: 8px;
+  overflow: hidden;
+}
+.input-group input[type="text"] {
+  flex: 1;
+  padding: 8px;
+  border: none;
+  outline: none;
+  background-color: #666;
+  color: #FFF;
+}
+.input-group button {
+  background-color: #1E3A8A;
+  color: #FFF;
+  border: none;
+  padding: 8px;
+  cursor: pointer;
+}
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.control {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.control input[type="range"] {
+  cursor: pointer;
+}
+.control label {
+  color: #FFF;
+}
+.control input[type="checkbox"] {
+  margin-right: 4px;
+}
