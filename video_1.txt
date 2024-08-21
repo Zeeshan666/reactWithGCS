@@ -77,3 +77,7 @@ function Component5() {
 useContext is a hook that allows functional components to access the context value directly without needing a Consumer component.
 The current context value, which is the value of the closest Provider up the tree. If there is no matching Provider,
  it returns the defaultValue provided when creating the context.
+
+-------------------------------------------------------------------------------------------------------------
+
+Props => reusing existing component properties and adding new properties

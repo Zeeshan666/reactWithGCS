@@ -5,6 +5,7 @@ import App from './App';
 import Test from './Test';
 import Counter from './Counter';
 import reportWebVitals from './reportWebVitals';
+import PropTest from './Props';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 const eleA = ( <a href="https://google.com" target="_blank">Click me to visit google</a> );
@@ -21,7 +22,7 @@ root.render(
 
     
     <div>
-      <App />
+      <PropTest />
       
 
     </div>
@@ -32,7 +33,7 @@ root.render(
       {eleA}
       <br></br>
       {eleB}
-
+      <App />
       <br /> <br />
       <Counter />
 
