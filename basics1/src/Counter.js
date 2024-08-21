@@ -42,10 +42,9 @@ function Counter() {
 
     QUESTION:
     JAB HAM VALUE CONSOLE LOG KER RAHAY HAIN TO VALUE AIK STEP BEHIND KI VALUE DIKHA RAHI HA. WHY? (I AM DOING SOMETHING WRONG)
-<<<<<<< HEAD
+
     REASON: Hooks execute in async manner so when you console.log the value it will be 1 step behind in the console as updated value is not available yet.
-=======
->>>>>>> 074f0eeca8a2b23cff7070f2bf78209556668b18
+
 
                                                             
 */
