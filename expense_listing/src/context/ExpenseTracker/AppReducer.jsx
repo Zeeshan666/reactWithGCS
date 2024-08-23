@@ -13,6 +13,11 @@ export default (state, action) => {
         ...state,
         transactions: [action.payload, ...state.transactions]
       }
+    case 'INITIALIZE_TRANSACTIONS':
+      return {
+        ...state,
+        transactions: action.payload
+      }
     default:
       return state;
   }
